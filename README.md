@@ -1,59 +1,33 @@
-# SmartHarvestFrontend
+# 🌐 Frontend - Aplicación Web con Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.5.
+## 📖 Descripción
+Este proyecto académico corresponde al desarrollo del **frontend de una aplicación web** orientada a la gestión de información agrícola.  
+Fue desarrollado en **equipo** como parte del curso *Arquitectura de Aplicaciones Web* en la Universidad Peruana de Ciencias Aplicadas.
 
-## Development server
+El frontend fue implementado en **Angular**, consumiendo la API RESTful desarrollada en Spring Boot.
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+## ⚙️ Tecnologías utilizadas
+- Lenguaje: **TypeScript**
+- Framework: **Angular**
+- Estilos: **Angular Material**
+- Consumo de API: **HttpClient**
+- Entorno de despliegue: **Render**
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## 🚀 Funcionalidades principales
+- Interfaz web para registrar y consultar información agrícola.
+- Formularios interactivos con validaciones.
+- Visualización de datos consumidos desde el backend.
+- Navegación y diseño responsivo con Angular Material.
+- Pruebas en entornos ágiles.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
-```
+## ▶️ Ejecución
+1. Clona este repositorio:
+   ```bash
+   git clone https://github.com/winstonleon/smartharvest-frontend.git
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
