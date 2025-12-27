@@ -1,132 +1,188 @@
-/* Contenedor principal */
-.sensor-container {
+/* 1. Layout Base */
+.table-container {
   min-height: 100vh;
   background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
   padding: 20px;
-  box-sizing: border-box;
 }
 
-/* Encabezado */
-.header-section {
-  margin-bottom: 30px;
-  color: white;
-  text-align: center;
-}
-
-.header-section h1 {
-  font-size: 2.5rem;
-  font-weight: 300;
-  margin: 0;
-}
-
-/* Tabla */
-.table-section {
-  background: white;
-  border-radius: 16px;
+/* 2. Banner Superior (Glassmorphism) */
+.table-header .header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
   padding: 24px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  overflow-x: auto;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  margin-bottom: 30px;
 }
 
-/* Estilos para la tabla de Angular Material */
-.sensor-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-/* Encabezado de tabla */
-.sensor-table th {
-  background-color: #e8f5e9;
-  color: #2e7d32;
-  font-weight: 600;
-  font-size: 0.95rem;
-  padding: 12px;
-  border-bottom: 2px solid #c8e6c9;
-}
-
-/* Celdas de tabla */
-.sensor-table td {
-  padding: 12px;
-  font-size: 0.93rem;
-  border-bottom: 1px solid #f0f0f0;
-  color: #333;
-}
-
-/* Fila hover */
-.sensor-table tr:hover {
-  background-color: #f1f8e9;
-}
-
-/* Botones */
-button[mat-button] {
-  min-width: 36px;
-  height: 36px;
-  border-radius: 8px;
+.page-title {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 12px;
+  margin: 0 0 8px 0;
+  font-size: 2.25rem;
+  font-weight: 300;
 }
 
-button[mat-button] mat-icon {
+.title-icon {
+  font-size: 36px;
+  width: 36px;
+  height: 36px;
+}
+
+.page-subtitle {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+}
+
+/* 3. Tarjeta de Tabla */
+.table-card {
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  background: white;
+  overflow: hidden;
+  animation: slideInUp 0.6s ease-out;
+}
+
+.table-card mat-card-content { padding: 0; }
+.table-wrapper { overflow-x: auto; }
+.companies-table { width: 100%; background: white; }
+
+/* 4. Celdas y Encabezados */
+.mat-mdc-header-cell, .mat-mdc-cell {
+  padding: 16px 12px;
+  vertical-align: middle;
+  text-align: left;
+  font-size: 14px;
+  border-bottom: 1px solid #e8f5e8;
+}
+
+.mat-mdc-header-cell {
+  color: #2e7d32;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c8 100%);
+}
+
+.mat-mdc-header-cell .header-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: flex-start;
+}
+
+.mat-mdc-header-cell .header-content mat-icon {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  color: #4caf50;
+}
+
+/* 5. Filas y Hover */
+.table-row {
+  height: 72px;
+  transition: all 0.3s ease;
+  animation: slideInUp 0.4s ease-out both;
+}
+
+.table-row:hover {
+  background: rgba(76, 175, 80, 0.05);
+  box-shadow: inset 4px 0 0 #4caf50;
+}
+
+.table-row:nth-child(even) { background: rgba(248, 251, 248, 0.5); }
+
+/* Animación de Cascada */
+.table-row:nth-child(1) { animation-delay: 0.1s; }
+.table-row:nth-child(2) { animation-delay: 0.15s; }
+.table-row:nth-child(3) { animation-delay: 0.2s; }
+
+/* 6. Botones de Acción (Estilo Nuevo) */
+.actions-header, .action-cell {
+  text-align: center !important;
+  width: 100px;
+}
+
+.action-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  margin: 0 4px;
+}
+
+.edit-button { 
+  background: rgba(33, 150, 243, 0.1); 
+  color: #1976d2; 
+}
+.edit-button:hover { 
+  background: #1976d2; 
+  color: white; 
+  transform: scale(1.1); 
+}
+
+.delete-button { 
+  background: rgba(244, 67, 54, 0.1); 
+  color: #f44336; 
+}
+.delete-button:hover { 
+  background: #f44336; 
+  color: white; 
+  transform: scale(1.1); 
+}
+
+/* Esto define el fondo verde claro y el borde inferior grueso del encabezado */
+.mat-mdc-header-row {
+  background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c8 100%) !important;
+  height: 64px;
+}
+
+/* El "contorno" de la columna es en realidad el borde inferior de la celda del encabezado */
+.mat-mdc-header-cell {
+  color: #2e7d32 !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #a5d6a7 !important; /* Aquí está el contorno inferior */
+  padding: 0 16px !important;
+}
+
+/* Asegura que el contenido (icono + texto) esté centrado verticalmente */
+.mat-mdc-header-cell .header-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mat-mdc-header-cell mat-icon {
+  color: #4caf50;
   font-size: 20px;
+  width: 20px;
+  height: 20px;
 }
 
-/* Editar */
-button[color="primary"] {
-  background-color: rgba(33, 150, 243, 0.1);
-  color: #1976d2;
-  transition: all 0.2s ease;
+.table-card {
+  border-radius: 16px;
+  overflow: hidden; /* Esto hace que el degradado del header respete las esquinas redondeadas */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-button[color="primary"]:hover {
-  background-color: rgba(33, 150, 243, 0.2);
+.table-card mat-card-content {
+  padding: 0 !important; /* Evita espacios en blanco alrededor del encabezado verde */
 }
 
-/* Eliminar */
-button[color="warn"] {
-  background-color: rgba(244, 67, 54, 0.1);
-  color: #d32f2f;
-  transition: all 0.2s ease;
-}
+/* 7. Estados (Badge opcional) */
+.status-active { color: #2e7d32; font-weight: 600; }
+.status-inactive { color: #c62828; font-weight: 600; }
 
-button[color="warn"]:hover {
-  background-color: rgba(244, 67, 54, 0.2);
-}
-
-/* Paginador */
-mat-paginator {
-  margin-top: 16px;
-  border-top: 1px solid #e0e0e0;
-  padding-top: 12px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .sensor-container {
-    padding: 12px;
-  }
-
-  .header-section h1 {
-    font-size: 1.8rem;
-  }
-
-  .table-section {
-    padding: 16px;
-    border-radius: 12px;
-  }
-
-  .sensor-table th,
-  .sensor-table td {
-    font-size: 0.85rem;
-    padding: 8px;
-  }
-
-  button[mat-button] {
-    min-width: 32px;
-    height: 32px;
-  }
-
-  mat-paginator {
-    font-size: 12px;
-  }
+/* 8. Animaciones */
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }

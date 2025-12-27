@@ -10,7 +10,7 @@ import { LoginService } from '../../../services/login.service';
 @Component({
   selector: 'app-cropriskpercentagebyparcel',
   standalone: true,
-  imports: [CommonModule, NgIf, NgFor, MatTableModule, MatCardModule, MatIconModule],
+  imports: [CommonModule, NgIf, MatTableModule, MatCardModule, MatIconModule],
   templateUrl: './cropriskpercentagebyparcel.component.html',
   styleUrl: './cropriskpercentagebyparcel.component.css'
 })

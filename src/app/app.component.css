@@ -1,0 +1,22 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+}
+
+.dashboard-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.main-content {
+  flex: 1;
+  overflow-y: auto; /* El scroll ahora sucede solo aquí adentro */
+}
+
+.auth-wrapper {
+  height: 100vh;
+  width: 100%;
+}

@@ -55,7 +55,9 @@ export class LoginComponent implements OnInit {
               sessionStorage.setItem('userId', id.toString());
               this.loginService.updateUserId(id); // nuevo método en LoginService
               console.log('UserId cargado correctamente:', id);
-              this.router.navigate(['home']);
+              this.router.navigate(['home']).then(() => {
+                window.scrollTo(0, 0);
+              });
             },
             (error) => {
               console.error('Error al obtener el ID desde username', error);
